@@ -26,14 +26,14 @@ while 1:
     if read_serial == "START\r\n":
         READ = True
         
-    if READ:
+    elif READ:
         if read_serial == "END\r\n":
             READ = False
             UPLOAD = True
         elif read_serial != "":
             water_data.append(read_serial)
             
-    if UPLOAD:
+    elif UPLOAD:
         try:
             print(water_data)
             location = 'Saraburi_TEST2' #current location
