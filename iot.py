@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Jan 22 14:14:52 2018
-
 @author: binjade
 """
 
@@ -17,7 +16,7 @@ UPLOAD = False
 water_data = []
 
 #Connect to Serial Port for communication
-ser = serial.Serial('/dev/ttyACM1', 9600)
+ser = serial.Serial('/dev/ttyACM0', 9600)
 #Setup a loop to send Temperature values at fixed intervals
 #in seconds
 fixed_interval = 3
