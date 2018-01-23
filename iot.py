@@ -50,9 +50,11 @@ while 1:
             print 'Record inserted. Result Code = ' + str(result.status_code) + ',' + result.text
             time.sleep(fixed_interval)
             UPLOAD = False
+            water_data = []
         
         except IOError:
             UPLOAD = False
+            water_data = []
             print('Error! Something went wrong.')
 
 time.sleep(fixed_interval)
