@@ -20,7 +20,7 @@ water_data = []
 ser = serial.Serial('/dev/ttyACM0', 9600)
 #Setup a loop to send Temperature values at fixed intervals
 #in seconds
-fixed_interval = 10
+fixed_interval = 3
 while 1:
     read_serial = ser.readline()
     if read_serial == "START":
