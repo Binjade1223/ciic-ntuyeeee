@@ -35,7 +35,7 @@ while 1:
             
     if UPLOAD:
         try:
-            print(data)
+            print(water_data)
             location = 'Saraburi_TEST2' #current location
             Now = time.time() #current time and date
             tds = int(water_data[1])  #test(ppm)
