@@ -23,24 +23,23 @@ ser = serial.Serial('/dev/ttyACM1', 9600)
 fixed_interval = 3
 while 1:
     read_serial = ser.readline()
-    if read_serial == "START\r\n":
+    if read_serial == 'START\r\n':
         READ = True
         
-    elif READ:
-        if read_serial == "END\r\n":
+    if READ:
+        if read_serial == 'END\r\n':
             READ = False
             UPLOAD = True
-        elif read_serial != "":
-            water_data.append(read_serial)
+        water_data.append(read_serial)
             
-    elif UPLOAD:
+    if UPLOAD:
         try:
             print(water_data)
             location = 'Saraburi_TEST2' #current location
             Now = time.time() #current time and date
-            tds = int(water_data[1])  #test(ppm)
+            tds = int(water_data[2])  #test(ppm)
             pH = float(rd.randrange(69, 76))/10.0 #test
-            temperature = int(water_data[0]) #test(Celsius)
+            temperature = int(water_data[1]) #test(Celsius)
 
             print(location, Now, tds, pH, temperature)
             #insert record
