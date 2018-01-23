@@ -23,14 +23,14 @@ ser = serial.Serial('/dev/ttyACM0', 9600)
 fixed_interval = 3
 while 1:
     read_serial = ser.readline()
-    if read_serial == "START":
+    if str(read_serial) == "START":
         READ = True
         
     if READ:
-        if read_serial == "END":
+        if str(read_serial) == "END":
             READ = False
             UPLOAD = True
-        elif read_serial != "":
+        elif str(read_serial) != "":
             water_data.append(read_serial)
             
     if UPLOAD:
