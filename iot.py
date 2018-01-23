@@ -23,11 +23,11 @@ ser = serial.Serial('/dev/ttyACM0', 9600)
 fixed_interval = 3
 while 1:
     read_serial = ser.readline()
-    if str(read_serial) == "START":
+    if str(read_serial) == "START\r\n":
         READ = True
         
     if READ:
-        if str(read_serial) == "END":
+        if str(read_serial) == "END\r\n":
             READ = False
             UPLOAD = True
         elif str(read_serial) != "":
