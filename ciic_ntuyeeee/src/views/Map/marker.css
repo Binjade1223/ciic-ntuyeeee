@@ -1,0 +1,7 @@
+.marker-modal {
+  transition: opacity 0.5s;
+}
+
+.marker-circle {
+  transition: 0.2s;
+}
